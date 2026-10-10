@@ -1,0 +1,1189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+  color: #172033;
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  width: 350px;
+  height: 350px;
+
+  background: #ffd6b3;
+
+  border-radius: 50%;
+
+  top: 120px;
+  left: -150px;
+
+  filter: blur(80px);
+
+  opacity: 0.45;
+
+  z-index: -1;
+}
+
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  width: 400px;
+  height: 400px;
+
+  background: #cfe3ff;
+
+  border-radius: 50%;
+
+  right: -180px;
+  bottom: 100px;
+
+  filter: blur(90px);
+
+  opacity: 0.45;
+
+  z-index: -1;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+#navbar {
+  width: 100%;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 7%;
+
+  background: white;
+
+  border-bottom: 1px solid #eeeeee;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+}
+
+
+#logo {
+  font-size: 25px;
+  font-weight: 800;
+  color: #331e17;
+}
+
+
+#logo span {
+  color: #e85d04;
+}
+
+
+#navLinks {
+  display: flex;
+  gap: 35px;
+}
+
+
+#navLinks a {
+  color: #333333;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+#navLinks a:hover {
+  color: #e85d04;
+}
+
+
+#navButtons {
+  display: flex;
+  gap: 12px;
+}
+
+
+#loginButton,
+#postButton {
+  padding: 10px 20px;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+
+#loginButton {
+  background: white;
+  border: 1px solid #dddddd;
+}
+
+
+#postButton {
+  background: #2f689b;
+
+  color: white;
+
+  border: none;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+#heroSection {
+  min-height: 510px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 7%;
+
+  background: linear-gradient(
+    to bottom,
+    #172033 0%,
+    #263b5a 55%,
+    #526a85 72%,
+    #aeb9c6 87%,
+    #ffffff 100%
+  );
+}
+
+
+#heroContent {
+  width: 100%;
+  max-width: 1100px;
+
+  text-align: center;
+}
+
+
+#heroSmallText {
+  color: #ffb703;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 18px;
+
+  margin-top: -40px;
+}
+
+
+#heroHeading {
+  color: white;
+
+  font-size: 58px;
+
+  line-height: 1.1;
+
+  margin-bottom: 20px;
+
+  animation: headingLeft 3.2s ease-out;
+}
+
+
+#heroHeadingSpan {
+  color: #ff8c42;
+
+  display: inline-block;
+
+  margin-left: 10px;
+
+  animation: headingRight 1.2s ease-out;
+}
+
+
+#heroDescription {
+  color: #d9e0eb;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+
+  max-width: 650px;
+
+  margin: auto;
+}
+
+
+/* =========================
+   HERO ANIMATION
+========================= */
+
+@keyframes headingLeft {
+
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+
+@keyframes headingRight {
+
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+#searchBox {
+  background: white;
+
+  max-width: 1000px;
+
+  margin: 45px auto 0;
+
+  border-radius: 14px;
+
+  padding: 20px;
+
+  text-align: left;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+
+#searchTabs {
+  display: flex;
+
+  gap: 25px;
+
+  border-bottom: 1px solid #eeeeee;
+
+  margin-bottom: 20px;
+}
+
+
+#searchTabs button {
+  border: none;
+
+  background: transparent;
+
+  padding: 10px 5px;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+#buyTab {
+  color: #e85d04;
+
+  border-bottom: 2px solid #e85d04 !important;
+}
+
+
+#rentTab,
+#sellTab {
+  color: #555555;
+}
+
+
+#searchFields {
+  display: grid;
+
+  grid-template-columns: 1.5fr 1fr 1fr auto;
+
+  gap: 12px;
+
+  align-items: end;
+}
+
+
+#locationField,
+#propertyField,
+#budgetField {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+#locationLabel,
+#propertyLabel,
+#budgetLabel {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #555555;
+}
+
+
+#locationInput,
+#propertySelect,
+#budgetSelect {
+  width: 100%;
+
+  height: 45px;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 7px;
+
+  padding: 0 12px;
+
+  outline: none;
+
+  background: white;
+
+  font-size: 14px;
+}
+
+
+#locationInput:focus,
+#propertySelect:focus,
+#budgetSelect:focus {
+  border-color: #e85d04;
+}
+
+
+#searchButton {
+  height: 45px;
+
+  padding: 0 28px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #2f689b;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+#searchButton:hover {
+  background: #d94f00;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+#statsSection {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  padding: 40px 7%;
+
+  gap: 20px;
+
+  background: white;
+
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+
+
+#statsSection > div {
+  text-align: center;
+
+  border-right: 1px solid #eeeeee;
+}
+
+
+#statsSection > div:last-child {
+  border-right: none;
+}
+
+
+#statsSection h2 {
+  font-size: 28px;
+
+  margin-bottom: 7px;
+
+  color: #172033;
+}
+
+
+#statsSection p {
+  color: #777777;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   WHAT ARE YOU LOOKING FOR
+========================= */
+
+#lookingSection {
+  text-align: center;
+
+  padding: 25px 0;
+
+  background: white;
+}
+
+
+#lookingHeading {
+  color: #172033;
+
+  font-size: 32px;
+
+  font-weight: 800;
+
+  text-align: center;
+
+  margin-top: 10px;
+
+  margin-bottom: 15px;
+
+  position: relative;
+
+  display: inline-block;
+}
+
+
+#lookingHeading::after {
+  content: "";
+
+  width: 60px;
+
+  height: 4px;
+
+  border-radius: 10px;
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: -8px;
+
+  transform: translateX(-50%);
+}
+
+
+#smallWalkingArea {
+  width: 300px;
+
+  height: 55px;
+
+  margin: auto;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-bottom: 2px solid #cccccc;
+}
+
+
+#smallBoy {
+  position: absolute;
+
+  left: 0;
+
+  bottom: 2px;
+
+  font-size: 25px;
+
+  animation: smallBoyWalk 7s linear infinite;
+
+  transform: scaleX(-1);
+}
+
+
+#smallHouse {
+  position: absolute;
+
+  right: 0;
+
+  bottom: 0;
+
+  font-size: 28px;
+}
+
+
+@keyframes smallBoyWalk {
+
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: 265px;
+  }
+
+}
+
+
+/* =========================
+   CLICK STAR
+========================= */
+
+.clickStar {
+  position: fixed;
+
+  font-size: 24px;
+
+  pointer-events: none;
+
+  z-index: 9999;
+
+  transform: translate(-50%, -50%);
+
+  animation: starMove 1s ease-out forwards;
+}
+
+
+@keyframes starMove {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.3);
+  }
+
+  20% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.2);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -70px)
+      scale(1);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, -130px)
+      scale(0.3);
+  }
+
+}
+
+
+/* =========================
+   PROPERTY CARDS
+========================= */
+
+#propertyCards {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: stretch;
+
+  gap: 25px;
+
+  padding: 40px 7%;
+}
+
+
+#rentPropertyCard,
+#buyPropertyCard,
+#sellPropertyCard {
+  width: 30%;
+
+  padding: 30px 25px;
+
+  background: white;
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 14px;
+
+  text-align: center;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+
+#rentPropertyCard:hover,
+#buyPropertyCard:hover,
+#sellPropertyCard:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+#rentPropertyHeading,
+#buyPropertyHeading,
+#sellPropertyHeading {
+  font-size: 22px;
+
+  color: #172033;
+
+  margin-bottom: 12px;
+}
+
+
+#rentPropertyText,
+#buyPropertyText,
+#sellPropertyText {
+  font-size: 14px;
+
+  color: #666666;
+
+  line-height: 1.6;
+
+  margin-bottom: 20px;
+}
+
+
+#rentPropertyButton,
+#buyPropertyButton,
+#sellPropertyButton {
+  padding: 10px 18px;
+
+  background: #2f689b;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+
+#rentPropertyButton:hover,
+#buyPropertyButton:hover,
+#sellPropertyButton:hover {
+  background: #0aafdc;
+}
+
+
+/* =========================
+   PROPERTY CARD SHAKE
+========================= */
+
+.propertyCardShake {
+  animation: propertyCardShake 0.25s ease;
+}
+
+
+@keyframes propertyCardShake {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-8px);
+  }
+
+  40% {
+    transform: translateX(8px);
+  }
+
+  60% {
+    transform: translateX(-6px);
+  }
+
+  80% {
+    transform: translateX(6px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  #navbar {
+    padding: 0 4%;
+  }
+
+
+  #navLinks {
+    display: none;
+  }
+
+
+  #heroSection {
+    padding: 60px 4%;
+  }
+
+
+  #heroHeading {
+    font-size: 43px;
+  }
+
+
+  #searchFields {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  #searchButton {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  #navbar {
+    height: 65px;
+  }
+
+
+  #logo {
+    font-size: 21px;
+  }
+
+
+  #loginButton {
+    display: none;
+  }
+
+
+  #postButton {
+    padding: 8px 12px;
+
+    font-size: 12px;
+  }
+
+
+  #heroSection {
+    min-height: auto;
+
+    padding: 55px 20px;
+  }
+
+
+  #heroHeading {
+    font-size: 36px;
+  }
+
+
+  #heroDescription {
+    font-size: 15px;
+  }
+
+
+  #searchBox {
+    padding: 15px;
+  }
+
+
+  #searchFields {
+    grid-template-columns: 1fr;
+  }
+
+
+  #statsSection {
+    grid-template-columns: 1fr 1fr;
+
+    padding: 30px 20px;
+  }
+
+
+  #statsSection > div {
+    border-right: none;
+  }
+
+
+  #lookingHeading {
+    font-size: 22px;
+  }
+
+
+  #smallWalkingArea {
+    width: 250px;
+  }
+
+
+  #smallBoy {
+    font-size: 22px;
+  }
+
+
+  #smallHouse {
+    font-size: 25px;
+  }
+
+
+  @keyframes smallBoyWalk {
+
+    0% {
+      left: 0;
+    }
+
+    100% {
+      left: 215px;
+    }
+
+  }
+
+
+  #propertyCards {
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 30px 20px;
+  }
+
+
+  #rentPropertyCard,
+  #buyPropertyCard,
+  #sellPropertyCard {
+    width: 100%;
+  }
+
+}
+
+
+#ownerAgentSection {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 30px;
+
+  padding: 50px 7%;
+
+  background: #eef9fb;
+}
+
+
+/* =========================
+   OWNER CARD
+========================= */
+
+#ownerCard {
+  width: 50%;
+
+  background: white;
+
+  padding: 35px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+
+#ownerCard:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   AGENT CARD
+========================= */
+
+#agentCard {
+  width: 50%;
+
+  background: white;
+
+  padding: 35px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+
+#agentCard:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   HEADING AREA
+========================= */
+
+#ownerHeadingArea,
+#agentHeadingArea {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+#ownerIcon,
+#agentIcon {
+  font-size: 32px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+#ownerHeading,
+#agentHeading {
+  font-size: 20px;
+
+  color: #172033;
+
+  margin: 0;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+#ownerText,
+#agentText {
+  font-size: 14px;
+
+  color: #607080;
+
+  line-height: 1.5;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================
+   POINTS
+========================= */
+
+#ownerPoints,
+#agentPoints {
+  margin-bottom: 25px;
+}
+
+
+#ownerPoint1,
+#ownerPoint2,
+#ownerPoint3,
+#ownerPoint4,
+#agentPoint1,
+#agentPoint2,
+#agentPoint3,
+#agentPoint4 {
+  font-size: 13px;
+
+  color: #36516b;
+
+  margin-bottom: 13px;
+}
+
+
+/* =========================
+   CHECK MARK
+========================= */
+
+#ownerPoint1 span,
+#ownerPoint2 span,
+#ownerPoint3 span,
+#ownerPoint4 span,
+#agentPoint1 span,
+#agentPoint2 span,
+#agentPoint3 span,
+#agentPoint4 span {
+  color: #009fa3;
+
+  font-size: 17px;
+
+  margin-right: 10px;
+
+  font-weight: bold;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+#ownerButton,
+#agentButton {
+  display: block;
+
+  margin: auto;
+  margin-top:0px;
+  padding: 11px 25px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #2f689b;
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+
+#ownerButton:hover,
+#agentButton:hover {
+  background: #0aafdc;
+
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  #ownerAgentSection {
+    flex-direction: column;
+
+    padding: 30px 20px;
+
+    gap: 20px;
+  }
+
+
+  #ownerCard,
+  #agentCard {
+    width: 100%;
+
+    padding: 25px;
+  }
+
+
+  #ownerHeading,
+  #agentHeading {
+    font-size: 18px;
+  }
+
+
+  #ownerIcon,
+  #agentIcon {
+    font-size: 28px;
+  }
+
+
+  #ownerText,
+  #agentText {
+    font-size: 13px;
+  }
+
+
+  #ownerPoint1,
+  #ownerPoint2,
+  #ownerPoint3,
+  #ownerPoint4,
+  #agentPoint1,
+  #agentPoint2,
+  #agentPoint3,
+  #agentPoint4 {
+    font-size: 12px;
+  }
+
+}
